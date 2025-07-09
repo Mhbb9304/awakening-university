@@ -1,0 +1,255 @@
+import { useState } from 'react'
+import { Zap, Check, Lock, BrainCircuit, Rocket, Share2, Bitcoin, UserX, ArrowRight } from 'lucide-react'
+import { Button } from "/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "/components/ui/card"
+import { Input } from "/components/ui/input"
+
+export default function AwakenYourSkills() {
+  const [email, setEmail] = useState('')
+
+  const skillFeatures = [
+    {
+      icon: <BrainCircuit className="w-6 h-6 text-purple-500" />,
+      title: "AI-Powered Mastery",
+      description: "Our AI adapts to your learning style, helping you master skills 3x faster"
+    },
+    {
+      icon: <Rocket className="w-6 h-6 text-blue-500" />,
+      title: "Future-Proof Skills",
+      description: "Learn what schools don't teach: crypto, AI, and digital freedom"
+    },
+    {
+      icon: <Bitcoin className="w-6 h-6 text-yellow-500" />,
+      title: "Earn While Learning",
+      description: "Get paid through our referral system as you acquire new skills"
+    },
+    {
+      icon: <Share2 className="w-6 h-6 text-green-500" />,
+      title: "Build Your Network",
+      description: "Connect with like-minded rebels building the future"
+    },
+    {
+      icon: <Lock className="w-6 h-6 text-red-500" />,
+      title: "Privacy First",
+      description: "No tracking, no permanent records, just pure learning"
+    },
+    {
+      icon: <UserX className="w-6 h-6 text-orange-500" />,
+      title: "No Credentials Needed",
+      description: "Your potential matters more than your past education"
+    }
+  ]
+
+  const skillCategories = [
+    "AI & Automation",
+    "Crypto & Web3",
+    "Digital Marketing",
+    "Personal Branding",
+    "Financial Freedom",
+    "Mindset Mastery"
+  ]
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-b from-gray-900 to-black border-b border-blue-500/20">
+        <div className="container mx-auto px-4 py-20 md:py-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium mb-6">
+              <Zap className="w-4 h-4 mr-2" /> LIMITED SPOTS AVAILABLE
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Awaken</span> Your Most<br />Valuable Skills
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8">
+              The <span className="text-blue-400">anti-university</span> for rebels building<br />
+              wealth, freedom, and impact in the AI age
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold">
+                Join The Movement <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button variant="outline" size="lg" className="text-lg border-blue-500/50 hover:bg-blue-500/10 hover:border-blue-500/70 text-blue-500">
+                See Curriculum
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skill Categories */}
+      <section className="py-12 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-3">
+            {skillCategories.map((category, index) => (
+              <div key={index} className="px-4 py-2 rounded-full bg-gray-900 border border-gray-800 text-sm font-medium hover:bg-blue-500/10 hover:border-blue-500/50 transition-colors">
+                {category}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 md:py-24 bg-black border-y border-gray-800">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Why <span className="text-blue-500">Traditional Education</span> Failed You
+            </h2>
+            <p className="text-xl text-gray-400">
+              And how we're fixing it
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {skillFeatures.map((feature, index) => (
+              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-blue-500/50 transition-colors group">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-black to-gray-900 border border-gray-800 flex items-center justify-center group-hover:border-blue-500/50 transition-colors mb-4">
+                    {feature.icon}
+                  </div>
+                  <CardTitle>{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-400">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Earning System */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-900 to-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <span className="text-blue-500">Learn More</span>, Earn More
+            </h2>
+            <p className="text-xl text-gray-400">
+              Our revolutionary compensation model
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center">
+              <div className="text-5xl font-bold text-blue-500 mb-4">₱0</div>
+              <h3 className="text-xl font-bold mb-4">Start Free</h3>
+              <p className="text-gray-400 mb-6">Full access for 30 days</p>
+              <ul className="space-y-3 text-left mb-8">
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                  <span>All courses unlocked</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                  <span>Earning dashboard</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                  <span>Private community</span>
+                </li>
+              </ul>
+              <Button variant="outline" className="w-full border-blue-500/50 hover:bg-blue-500/10 text-blue-500">
+                Claim Free Access
+              </Button>
+            </div>
+
+            <div className="bg-gradient-to-b from-blue-900/30 to-black p-8 rounded-xl border border-blue-500/30 text-center transform hover:scale-[1.02] transition-transform">
+              <div className="text-5xl font-bold text-purple-500 mb-4">₱500</div>
+              <h3 className="text-xl font-bold mb-4">Per Active Member</h3>
+              <p className="text-gray-400 mb-6">Paid instantly via GCash</p>
+              <ul className="space-y-3 text-left mb-8">
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                  <span>Unlimited earning potential</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                  <span>+₱100 bonus for first 5</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-purple-500 flex-shrink-0" />
+                  <span>Real-time tracking</span>
+                </li>
+              </ul>
+              <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold">
+                See Earning Dashboard
+              </Button>
+            </div>
+
+            <div className="bg-gray-900 p-8 rounded-xl border border-gray-800 text-center">
+              <div className="text-5xl font-bold text-green-500 mb-4">10%</div>
+              <h3 className="text-xl font-bold mb-4">Revenue Share</h3>
+              <p className="text-gray-400 mb-6">At 10+ active members</p>
+              <ul className="space-y-3 text-left mb-8">
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span>Lifetime passive income</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span>Monthly payouts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <span>VIP community access</span>
+                </li>
+              </ul>
+              <Button variant="outline" className="w-full border-green-500/50 hover:bg-green-500/10 text-green-500">
+                Learn About Tiers
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 md:py-24 bg-black border-t border-blue-500/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 text-blue-500 text-sm font-medium mb-6">
+              <Zap className="w-4 h-4 mr-2" /> TRANSFORM YOUR FUTURE
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Awaken Your Potential</span>?
+            </h2>
+            <p className="text-xl mb-8 text-gray-400">
+              30 days free. Then ₱2,900/3mo or ₱1,700/year.
+              <br />
+              Cancel anytime—no questions, no guilt.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <div className="flex-1">
+                <Input 
+                  type="email" 
+                  placeholder="Your email (burner accepted)" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full py-3 px-4 rounded-lg bg-gray-900 border-gray-700 text-white placeholder-gray-500"
+                />
+              </div>
+              <Button 
+                size="lg" 
+                className="text-lg bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold"
+              >
+                Start Your Journey
+              </Button>
+            </div>
+            <p className="text-sm mt-4 text-gray-500">
+              We don't track you. We don't judge you. We help you win.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-black border-t border-gray-800">
+        <div className="container mx-auto px-4 text-center text-gray-500">
+          <p>© {new Date().getFullYear()} Awaken Your Skills. Not a school. Not a scam. A revolution.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
